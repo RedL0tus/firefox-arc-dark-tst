@@ -1,107 +1,7 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-/* tabs --- rotate close button - put the code in userChrome.css*/
-
-#tabbrowser-tabs .tabbrowser-tab:hover .tab-close-button {
-transform: rotate(1440deg) !important;
-transition: transform ease-in-out 2s !important;
-}
-
-#PanelUI-menu-button {
-    list-style-image: url("chrome://browser/skin/page-action.svg") !important;
-    transform: rotate(90deg);
-}
-
-/*#nav-bar {
-    margin-right: 110px !important;
-}*/
 
 #urlbar[focused="true"] {
-    border: solid 1px #ccc !important;
-}
-
-
-/* Light theme */
-
-
-
-#PanelUI-menu-button:active{
-background-color: transparent !important;
-	
-}
-
-/*
-#titlebar-buttonbox{display: none;}
-#navigator-toolbox{padding-top:3px !important}
-#main-window[sizemode="maximized"] #navigator-toolbox{padding-top:10px !important;} */
-
-/*
-#titlebar-buttonbox{display: none;}
-#navigator-toolbox{padding-top:3px !important}
-#main-window[sizemode="maximized"] #navigator-toolbox{padding-top:10px !important;} */
-
-
-#titlebar-min {
-	margin-left: 8px !important;
-	margin-right: 5px !important;
-	border-radius:3px !important;
-	padding: 0px  !important;
-	padding-left: 5px !important;
-	padding-right: 5px !important;
-	margin-top: 3px  !important;
-	margin-bottom: 4px  !important;
-  -moz-appearance: none !important;
-	 list-style-image: url("yellow.svg") !important;
-}
-#titlebar-max {
-	margin-left: 5px !important;
-	margin-right: 5px !important;
-	border-radius:3px !important;
-	padding: 0px  !important;
-	padding-left: 5px !important;
-	padding-right: 5px !important;
-	margin-top: 3px  !important;
-	margin-bottom: 4px  !important;
-  -moz-appearance: none !important;
-    list-style-image: url("green.svg") !important;
-}
-
-#titlebar-close {
-	margin-left: 5px !important;
-	margin-right: 8px !important;
-	border-radius:3px !important;
-	padding: 0px  !important;
-	padding-left: 5px !important;
-	padding-right: 5px !important;
-	margin-top: 3px  !important;
-	margin-bottom: 4px  !important;
-	list-style-image: url("red.svg") !important;
-  -moz-appearance: none !important;
-	/* background-image: url("red.svg") !important;
-	 background-size: 16px 16px !important;
-	 background-repeat: no-repeat;*/
-}
-
-
-:root[sizemode="maximized"] #titlebar-max:hover {
-	/* background-color: transparent !important; To remove hover effect*/
-	background-color: rgba(0, 0, 0, 0.1) !important;
-     list-style-image: url("minz.svg") !important;
-}
-#titlebar-max:hover {
-	background-color: rgba(0, 0, 0, 0.1) !important;
-	list-style-image: url("max.svg") !important;
-}
-
-#titlebar-close:hover {
-	
-background-color: rgba(0, 0, 0, 0.1) !important;
-	list-style-image: url("closx.svg") !important;
-}
-
-#titlebar-min:hover {
-	
-	background-color: rgba(0, 0, 0, 0.1) !important;
-	list-style-image: url("min.svg") !important;
+    border: solid 1px #333 !important;
 }
 
 .titlebar-button > .toolbarbutton-icon {
@@ -109,29 +9,29 @@ background-color: rgba(0, 0, 0, 0.1) !important;
 	min-height: 16px !important;
 	width: 16px !important;
 	min-width: 16px !important;
-	
 }
 
+.titlebar-button > .toolbarbutton-icon { }
 
-
-.titlebar-button > .toolbarbutton-icon {
-
-
-	
+/* Arc-Dark */
+#PanelUI-menu-button:active{
+    background-color: #2F343F !important;
 }
 
+#navigator-toolbox{
+    background-color: #2F343F !important;
+}
 
+#titlebar {
+    background-color: #2F343F !important;
+}
 
 #PanelUI-menu-button{
-  margin-right: 6px !important;
+    margin-right: 6px !important;
 }
+
 #back-button {
-  margin-left: 6px !important;
-}
- 
-/* No Black Line */
-#navigator-toolbox{
-  margin-top: -1px !important;
+    margin-left: 6px !important;
 }
  
 /* Height */
@@ -139,131 +39,52 @@ background-color: rgba(0, 0, 0, 0.1) !important;
   min-height: 40px !important;
   z-index: 3
 }
+
 #urlbar {
-  margin-left: 85px !important;
-  border: none !important;
-  box-shadow: 0 0 2px 2px #EAEAEAEA !important;
-  min-height: 30px !important;
-}
- 
-/* Adjust Pinned Tab Width */
-.tabbrowser-tab[pinned="true"] {
-  min-width: 40px;
-}
-label[pinned="true"] {
-  display: none !important;
-}
-.tab-icon-image[pinned="true"] {
-  margin-left: 4px
+    min-height: 30px !important;
 }
  
 /* Clean Up */
 
 #urlbar .urlbar-input-box {
-    text-align: center;
+    text-align: left;
 }
+
 .urlbar-input-box > .urlbar-input::placeholder {
-  opacity: 0 !important;
+    opacity: 0 !important;
 }
 
-
-/* Autohide Tabs */
+/* Hide Tabs */
 #TabsToolbar {
-  min-height: 40px !important;
-    margin-top: -40px !important;
-  padding-top: 0px !important;
-  transition: all 0.3s ease 0s !important;
-    -moz-box-ordinal-group: 2 !important;
-}
-#navigator-toolbox {
-  transition: all 0.3s ease 0s !important;
-}
-/* Do not display overflow shadow when collapsed */
-#navigator-toolbox .tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-start-indicator,
-#navigator-toolbox .tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator {
-  opacity: 0;
-}
-#navigator-toolbox:hover {
-  margin-bottom: -39px !important;
-  transition: all 0.3s ease 0s !important;
-}
-#navigator-toolbox:hover > #TabsToolbar {
-  margin-top: -1px !important;
-  transition: all 0.3s ease 0s !important;
-}
-/* Show overflow shadow on expanded */
-#navigator-toolbox:hover .tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-start-indicator,
-#navigator-toolbox:hover .tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator {
-  opacity: 1;
-}
-
-/* Remove Tab Borders */
-.tabbrowser-tab::after, .tabbrowser-tab::before {
-   border-left: none !important;
-}
-:root {
-  --tabs-border: transparent !important;
-}
- 
-/* Tab Line At Bottom */
-.tab-line {
-  -moz-box-ordinal-group: 2;
-  min-height: 3px;
-}
- 
-/* Tabs don't move when dragging. */
-#TabsToolbar[movingtab] {
-  padding-bottom: -0px !important;
-}
-#TabsToolbar[movingtab] > .tabbrowser-tabs {
-  padding-bottom: -0px !important;
-  margin-bottom: -0px !important;
-}
-#TabsToolbar[movingtab] + #nav-bar {
-  margin-top: -0px !important;
-  pointer-events: none;
+    min-height: 40px !important;
+        margin-top: -40px !important;
+    padding-top: 0px !important;
+        -moz-box-ordinal-group: 2 !important;
 }
  
 /* Client Side Decorations */
 #titlebar-buttonbox {
-  height: 39px !important;
-  margin-bottom: 1px !important;
+    height: 39px !important;
+    margin-bottom: 1px !important;
+    background-color: #2F343F !important;
 }
+
 window[sizemode="maximized"] #titlebar-buttonbox {
-  margin-right: -5px !important;
+    margin-right: -5px !important;
 }
+
 #nav-bar {
-  margin-right: 110px;
-  box-shadow: none !important;
+    margin-right: 90px;
+    background-color: #2F343F !important;
 }
+
 #titlebar-buttonbox {
-  z-index: 3 !important;
+    z-index: 3 !important;
 }
+
 .titlebar-placeholder {
-  display:none !important;
+    display:none !important;
 }
-
-
-/*==== Thumping Sound icon for tab that has sound playing ====*/
-.tab-icon-sound[soundplaying]{
- transform: rotate(-90deg);
- animation: thump .47s linear infinite;
- }
- @keyframes thump {
-   10%,90% { margin-top:7px;
-  }
-  }
- .tab-icon-sound[muted]{
-  color: red !important;
-   transform: rotate(-90deg);
-   animation: none;
-   }
-.tab-icon-sound[soundplaying]{ margin-right:7px;
-}
-.tab-icon-sound[soundplaying]{ margin-bottom:6px;
-}
-
-
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
@@ -271,70 +92,153 @@ toolbarbutton#alltabs-button {
 	-moz-binding: url("userChrome.xml#js");
 }
 
-
-
-
-/*full-width tabs*/
-#TabsToolbar .tabbrowser-tab[fadein]:not([pinned]) {
-  flex-grow: 1 !important;
-  min-width: 11em !important;
-  max-width: 100% !important;
-}
-
-
-
-/*Hide and show close tab button*/
-#TabsToolbar .tab-close-button {
-  -moz-box-ordinal-group: 1 !important;
-  margin-left: -5.5px !important;
-  border-radius: 2px !important;
-  transition: opacity 200ms !important;
-    /* small x */
-  list-style-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">\<line x1="4.5" y1="4.5" x2="11.5" y2="11.5" stroke="rgb(84,82,84)" stroke-width="1"/>\<line x1="4.5" y1="11.5" x2="11.5" y2="4.5" stroke="rgb(84,82,84)" stroke-width="1"/>\</svg>') !important;
-}
-
-@media (max-resolution: 1.9dppx) {
-  #TabsToolbar .tab-close-button {
-    list-style-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">\<line x1="4.5" y1="4.5" x2="11.5" y2="11.5" stroke="rgb(84,82,84)" stroke-width="1.5"/>\<line x1="4.5" y1="11.5" x2="11.5" y2="4.5" stroke="rgb(84,82,84)" stroke-width="1.5"/>\</svg>') !important;
-  }
-}
-
-#TabsToolbar tab:not(:hover) .tab-close-button {
-  opacity: 0 !important;
-}
-
-#TabsToolbar tab:hover .tab-close-button {
-  opacity: 1 !important;
-}
-
-#TabsToolbar tab .close-icon {
-  -moz-image-region: unset !important;
-}
-
-#TabsToolbar tab .close-icon:hover {
-  -moz-image-region: unset !important;
-  background-color: rgba(0,0,0,0.1) !important;
-  background-clip: padding-box !important;
-}
-
-#TabsToolbar tab .close-icon:hover:active {
-  background-color: rgba(0,0,0,0.15) !important;
-}
-
-.tabbrowser-tab {
-  min-width: 1em !important;
-  clip-width: 1em !important;
-}
-
-#urlbar, .searchbar-textbox{
-    border-radius: 2em !important;
-}
-
-
 #titlebar-buttonbox{
-  background: whitesmoke !important;
+    background: #2F343F !important;
 }
 
-#tabbrowser-tabs {
-	--tab-line-color: transparent !important;
+/* Tree Style Tabs */
+
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+    visibility: collapse !important;
+}
+
+/* Sidebar min and max width removal */
+#sidebar {
+    max-width: none !important;
+    min-width: 0px !important;
+}
+
+#aHTMLTooltip {
+  display: none !important
+}
+
+/*Collapse in default state and add transition*/
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] {
+  overflow: hidden;
+  min-width: 0px;
+  max-width: 0px;
+  transition: all 0.2s ease;
+  border-right: 1px solid #0c0c0d;
+  z-index: 2;
+}
+
+/*Expand to 260px on hover*/
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover,
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar {
+  min-width: 260px !important;
+  max-width: 260px !important;
+}
+
+/* Hide main tabs toolbar */
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+    visibility: collapse !important;
+}
+
+/* Hide splitter, when using Tree Style Tab. */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] + #sidebar-splitter {
+    display: none !important;
+}
+
+/* Hide sidebar header, when using Tree Style Tab. */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+    visibility: collapse;
+}
+
+/* Shrink sidebar until hovered, when using Tree Style Tab. */
+:root {
+    --thin-tab-width: 30px;
+    --wide-tab-width: 200px;
+}
+#sidebar-box:not([sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]) {
+    min-width: var(--wide-tab-width) !important;
+    max-width: none !important;
+}
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] {
+    position: relative !important;
+    transition: all 100ms !important;
+    min-width: var(--thin-tab-width) !important;
+    max-width: var(--thin-tab-width) !important;
+}
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover {
+    transition: all 200ms !important;
+    min-width: var(--wide-tab-width) !important;
+    max-width: var(--wide-tab-width) !important;
+    margin-right: calc((var(--wide-tab-width) - var(--thin-tab-width)) * -1) !important;
+}
+/* Hide border on tab bar, force its state to 'scroll', adjust margin-left for width of scrollbar. */ 
+#tabbar { border: 0; overflow-y: scroll !important; margin-left: -18px !important; }
+
+/* Hide .twisty and adjust margins so favicons have 7px on left. */
+.tab .twisty {
+    visibility: hidden;
+    margin-left: -12px;
+}
+
+/* Push tab labels slightly to the right so they're completely hidden in collapsed state */
+.tab .label {
+    margin-left: 7px;
+}
+
+/* Hide close buttons on tabs. */
+.tab .closebox {
+    visibility: collapse;
+}
+
+.tab:hover .closebox {
+    visibility: initial;
+}
+
+/* Hide sound playing/muted button. */
+.sound-button::before {
+    display: none !important;
+}
+
+/* ################################################ */
+/* ##### COLOR THEME ############################## */
+/* ################################################ */
+
+:root {
+    background-color: #383838;
+}
+#tabbar {
+    border-right: 1px solid #1d1d1d;
+    box-shadow: none !important;
+}
+.tab {
+    box-shadow: none !important;
+}
+.tab:hover {
+   filter: opacity(80%) drop-shadow(0px 0px 0px #3498DB);
+}
+
+/* Adjust style for tab that has sound playing. */
+.tab.sound-playing .favicon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background: #FFFFFF;
+    animation: pulse 2s ease-out 0s infinite;
+    z-index: -1;
+    opacity: 0;
+}
+
+/* Adjust style for tab that is muted. */
+.tab.muted {
+    opacity: 0.5;
+}
+
+#main-window[titlepreface="[1] "] #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] {
+  visibility: collapse !important;
 }
